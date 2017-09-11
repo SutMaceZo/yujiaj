@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/lamp_text_1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:ems="20"
+        android:singleLine="true"
+        android:ellipsize="end"
+       android:layout_centerVertical="true"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/lamp_text_2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=""
+        android:gravity="center_vertical"
+        android:ems="20"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_centerVertical="true"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

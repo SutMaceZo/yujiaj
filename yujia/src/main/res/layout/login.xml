@@ -1,0 +1,204 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/titlebar_color"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/titlebar_color">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="登录"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_cancle_tx"
+            android:layout_width="50dp"
+            android:layout_height="48dp">
+
+            <ImageView
+                android:id="@+id/cancle_tx"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:src="@mipmap/rt" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativeLayout1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/loginback_color"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/login_image1"
+                    android:layout_width="28dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/mobile" />
+
+                <EditText
+                    android:id="@+id/login_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/login_image1"
+                    android:background="@null"
+                    android:ems="11"
+                    android:hint="请输入手机号码"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@null"
+                    android:textSize="16sp"></EditText>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@+id/login_edit"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/login_image2"
+                    android:layout_width="28dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/pw" />
+
+                <EditText
+                    android:id="@+id/password_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/login_image2"
+                    android:background="@null"
+                    android:ems="11"
+                    android:hint="请输入密码"
+                    android:inputType="textPassword"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@null"
+                    android:textSize="16sp"></EditText>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@+id/password_edit"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/gray" />
+            </RelativeLayout>
+
+            <!--<EditText
+               android:id="@+id/password_edit"
+               android:layout_width="match_parent"
+               android:layout_marginLeft="15dp"
+               android:layout_marginRight="15dp"
+               android:layout_height="48dp"
+               android:layout_below="@+id/login_edit"
+               android:layout_centerHorizontal="true"
+               android:layout_marginTop="5dp"
+               android:singleLine="true"
+                android:paddingLeft="10dp"
+                android:background="@color/white"
+                android:textCursorDrawable="@null"
+                android:inputType="textPassword"
+               android:hint="密码"
+               android:ems="16" >
+               <requestFocus />
+           </EditText>-->
+
+
+            <!--password_edit-->
+
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/password_edit"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/text_bg2"
+                android:text="登录"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/login_button"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/regist_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="24dp"
+                    android:text="注册账号"
+                    android:textColor="@color/titlebar_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/forget_psw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/regist_num"
+                    android:layout_alignBottom="@+id/regist_num"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="24dp"
+                    android:text="忘记密码"
+                    android:textColor="@color/titlebar_color"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="50dp"
+            android:indeterminateDrawable="@drawable/progressbar"
+            android:visibility="invisible" />
+    </FrameLayout>
+</RelativeLayout>

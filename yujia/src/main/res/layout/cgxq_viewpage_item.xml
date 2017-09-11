@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+
+        android:orientation="vertical">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/pic"
+            android:padding="8dp"
+            android:layout_width="72dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="72dp"
+            app:roundAsCircle="true"
+            app:actualImageScaleType="fitXY"
+            app:failureImage="@mipmap/default_error"
+            app:failureImageScaleType="fitCenter"
+            app:placeholderImage="@mipmap/default_error"
+            app:placeholderImageScaleType="fitCenter"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:ems="8"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_marginTop="5dp"/>
+
+
+        <TextView
+            android:id="@+id/tv_starttime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9:00-10:00"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/tv_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="瑜伽修炼基地"
+            android:ems="8"
+            android:singleLine="true"
+            android:ellipsize="end"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        >
+        <!--android:ems="8"-->
+        <Button
+            android:id="@+id/bt_yuyue"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/text_bg2"
+            android:layout_gravity="bottom"
+            android:focusable="false"
+
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="预约"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/titlebar_color"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/titlebar_color"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_bt_back"
+            android:layout_width="50dp"
+            android:layout_height="48dp">
+            <ImageView
+                android:id="@+id/bt_back"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/rt"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="我的场馆"
+            android:textSize="18sp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white" />
+
+        <TextView
+
+            android:id="@+id/cg_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:text="添加"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+    <!--SwipeRefreshLayout控件里面只能有一个可以滑动的子控件-->
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/srfl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <!--<FrameLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@color/gainsboro">-->
+
+            <ListView
+                android:id="@+id/record_listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/gainsboro"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:dividerHeight="16dp"
+             ></ListView>
+
+        <!--</FrameLayout>-->
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+</LinearLayout>

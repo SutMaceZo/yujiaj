@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+
+    android:paddingRight="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:layout_weight="1">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/pj_pic"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerHorizontal="true"
+                app:roundAsCircle="true"
+                app:failureImage="@mipmap/default_error"
+                app:failureImageScaleType="centerCrop"
+                app:placeholderImage="@mipmap/default_error"
+                app:placeholderImageScaleType="centerCrop" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+
+               >
+                <TextView
+                    android:id="@+id/pj_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxEms="6"
+
+                    android:text="name"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/pj_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:layout_toLeftOf="@id/pj_time"
+                    android:text="data"
+                    android:textColor="@color/gray"
+                    android:layout_centerVertical="true"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/pj_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="time"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                >
+                <TextView
+
+                    android:id="@+id/pj_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="sssssssssssssssssssssssaaaaaaaaaaaaaa"
+                    android:gravity="left|top"
+                    android:textSize="16sp"
+                    android:maxLines="2"
+                    android:ellipsize="marquee"
+                    android:paddingRight="8dp"
+                    android:textColor="@color/black"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+                <TextView
+                    android:id="@+id/pj_class_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="classname"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="4dp"
+        android:background="@color/gainsboro" />
+
+</LinearLayout>
+

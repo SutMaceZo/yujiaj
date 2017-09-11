@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:background="@color/titlebar_color"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/titlebar_color">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="完成课时"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+        <RelativeLayout
+            android:id="@+id/rl_bt_back"
+            android:layout_width="50dp"
+            android:layout_height="48dp">
+            <ImageView
+                android:id="@+id/bt_back"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/rt"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.chaotong.yujia.main.utils.PullToFlash.PullToRefreshLayout
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/RelativeLayout1"
+        android:background="@color/gainsboro"
+        android:layout_height="match_parent" >
+
+        <include layout="@layout/refresh_head" />
+        <!-- 支持所有实现Pullable接口的View -->
+
+        <com.chaotong.yujia.main.utils.PullToFlash.PullableListView
+            android:id="@+id/record_listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/gainsboro"
+            android:paddingTop="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:dividerHeight="8dp"  />
+
+        <include layout="@layout/load_more" />
+
+    </com.chaotong.yujia.main.utils.PullToFlash.PullToRefreshLayout>
+</LinearLayout>

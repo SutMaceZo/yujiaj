@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/swim_cg_image"
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            app:viewAspectRatio="2.56"
+            app:actualImageScaleType="fitXY"
+            app:placeholderImage="@drawable/not_find"
+            app:placeholderImageScaleType="focusCrop"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/gainsboro"
+            android:alpha="0.5"
+            android:layout_gravity="bottom"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/swim_cg_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="卡卡的卡拉卡开慢点"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsmallsmall"
+                android:layout_marginLeft="5dp"
+                />
+            <TextView
+                android:id="@+id/distence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dsada"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:singleLine="true"
+                android:textSize="14sp"
+                android:textColor="@color/orange"
+                android:layout_alignTop="@+id/swim_cg_name"
+                />
+
+            <TextView
+                android:id="@+id/swim_cg_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="卡卡的卡拉卡开慢点"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:layout_below="@+id/swim_cg_name"
+                android:ems="18"
+                android:layout_marginLeft="5dp"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+               />
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
+
+
+</LinearLayout>

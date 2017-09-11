@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="1500"
+    android:fillAfter="true"
+    android:fromDegrees="0"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:repeatCount="-1"
+    android:toDegrees="360"
+    android:drawable="@drawable/loading">
+//ring:画环
+    //sweep:渐变
+  <!--  <shape
+        android:shape="ring"
+        android:innerRadius="15dp"
+        android:useLevel="false"
+        >
+
+        <gradient
+            android:type="sweep"
+            android:useLevel="false"
+            android:startColor="#ffffff"
+            android:centerColor="@color/gainsboro"
+            android:centerY="0.50"
+            android:endColor="@color/gray" />
+    </shape>-->
+
+</rotate>

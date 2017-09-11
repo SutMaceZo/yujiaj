@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:background="@color/titlebar_color">
+    <RelativeLayout
+        android:id="@+id/pj_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/titlebar_color">
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="50dp"
+            android:layout_height="48dp">
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/rt"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="评价"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gainsboro"
+    android:layout_below="@+id/pj_relativeLayout">
+    <com.chaotong.yujia.main.utils.PullToFlash.PullToRefreshLayout
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+
+        <include layout="@layout/refresh_head" />
+        <!-- 支持所有实现Pullable接口的View -->
+
+        <com.chaotong.yujia.main.utils.PullToFlash.PullableListView
+            android:id="@+id/pj_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="8dp"
+            android:divider="@null"
+            android:scrollbars="none"
+            />
+        <include layout="@layout/load_more" />
+
+    </com.chaotong.yujia.main.utils.PullToFlash.PullToRefreshLayout>
+    <ProgressBar
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        style="?android:attr/progressBarStyleSmall"
+        android:indeterminateDrawable="@drawable/progressbar"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/probar"
+        android:visibility="invisible"
+        />
+    </FrameLayout>
+</RelativeLayout>

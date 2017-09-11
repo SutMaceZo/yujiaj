@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/titlebar_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true">
+    <RelativeLayout
+        android:id="@+id/yhj_rela"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/titlebar_color"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rl_bt_back_yhj"
+            android:layout_width="50dp"
+            android:layout_height="48dp">
+            <ImageView
+                android:id="@+id/bt_back_yhj"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/rt"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"/>
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text=""
+            android:textSize="18sp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+    <WebView
+        android:id="@+id/main_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_below="@+id/yhj_rela"></WebView>
+</RelativeLayout>

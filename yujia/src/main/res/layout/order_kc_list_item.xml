@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="104dp"
+            android:layout_height="104dp"
+            android:id="@+id/ct_pic"
+            android:layout_centerVertical="true"
+            app:actualImageScaleType="centerCrop"
+            app:failureImage="@mipmap/default_error"
+            app:failureImageScaleType="centerCrop"/>
+<!--app:placeholderImage="@mipmap/default_error"
+            app:placeholderImageScaleType="centerCrop"-->
+        <TextView
+            android:id="@+id/ct_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+           android:layout_alignTop="@+id/ct_pic"
+            android:layout_toRightOf="@+id/ct_pic"
+            android:layout_marginTop="8dp"
+            android:text="教练名称"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/ct_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时间"
+            android:textColor="@color/gray"
+            android:textSize="14sp"
+            android:layout_alignBottom="@+id/ct_name"
+            android:layout_toRightOf="@+id/ct_name"
+            android:layout_toEndOf="@+id/ct_name"
+            android:layout_marginLeft="8dp"
+            />
+
+        <TextView
+            android:id="@+id/ct_changguan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxEms="9"
+            android:singleLine="true"
+            android:text="场馆名称"
+            android:textColor="@color/gray"
+            android:textSize="14sp"
+            android:layout_marginLeft="4dp"
+            android:includeFontPadding="false"
+            android:layout_alignBottom="@+id/image1"
+            android:layout_toRightOf="@+id/image1"
+            />
+        
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/cg_gray"
+            android:layout_below="@+id/ct_name"
+            android:layout_marginTop="4dp"
+            android:layout_alignLeft="@+id/yy"
+            android:layout_alignStart="@+id/yy" />
+
+        <Button
+            android:id="@+id/yy"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:background="@drawable/text_bg2"
+            android:text="预约"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:focusable="false"
+            android:layout_alignBottom="@+id/ct_pic"
+            android:layout_alignLeft="@+id/ct_name" />
+
+    </RelativeLayout>
+
+</LinearLayout>

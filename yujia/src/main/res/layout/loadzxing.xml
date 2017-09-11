@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="24dp"
+    android:layout_marginBottom="24dp">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/zxing_load"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:actualImageScaleType="centerCrop"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        app:placeholderImage="@drawable/yujiajiaandroid"
+        />
+    <TextView
+        android:id="@+id/tx1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="扫描二维码可以下载安装"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/zxing_load"
+        android:layout_centerHorizontal="true" />
+    <Button
+        android:id="@+id/cancel_app"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/tx1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_bg2"
+        android:text="退出登录"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        />
+
+</RelativeLayout>

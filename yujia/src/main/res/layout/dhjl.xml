@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:background="@color/white">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/jiaolian_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        app:actualImageScaleType="fitXY"
+        app:failureImageScaleType="fitXY"
+        app:failureImage="@mipmap/default_error"
+        app:placeholderImageScaleType="fitXY"
+        app:placeholderImage="@mipmap/default_error"
+        />
+
+    <TextView
+        android:id="@+id/pj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="30dp"
+        android:text="-x"
+        android:textColor="@color/titlebar_color"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/yhj_date"
+        android:layout_alignStart="@+id/yhj_date"
+        android:layout_alignTop="@+id/jiaolian_image"
+        android:layout_marginTop="10dp"
+        android:text="aaa" />
+
+    <TextView
+        android:id="@+id/yhj_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@+id/jiaolian_image"
+        android:layout_toRightOf="@+id/jiaolian_image"
+        android:text="9:00-10:00" />
+
+    <TextView
+        android:id="@+id/yhj_sm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pj"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/jiaolian_image"
+        android:layout_toRightOf="@+id/jiaolian_image"
+        android:text="满200元减10元" />
+</RelativeLayout>
+
+

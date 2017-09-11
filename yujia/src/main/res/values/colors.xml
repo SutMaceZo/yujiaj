@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="bg_black">#000000</color>
+        <color name="transparent">#00FFFFFF</color>
+    <color name="text_gray">#8D7A71</color>
+    <!--常用颜色-->
+    <color name="white">#ffffff</color> <!-- 白色 -->
+    <color name="lightyellow">#ffffe0</color> <!-- 亮黄色 -->
+    <color name="yellow">#ffff00</color> <!-- 黄色 -->
+    <color name="lavenderblush">#fff0f5</color> <!-- 淡紫红 -->
+    <color name="gold">#ffd700</color> <!-- 金色 -->
+    <color name="orange">#ffa500</color> <!-- 橙色 -->
+    <color name="red">#ff0000</color> <!-- 红色 -->
+
+
+
+    <color name="lavender">#e6e6fa</color> <!-- 淡紫色 -->
+    <color name="firebrick">#b22222</color> <!-- 火砖色 -->
+    <color name="gainsboro">#f8f8f8</color> <!-- 淡灰色 -->
+    <color name="greenyellow">#adff2f</color> <!-- 黄绿色 -->
+    <color name="lightblue">#add8e6</color> <!-- 亮蓝色 -->
+    <color name="gray">#808080</color> <!-- 灰色 -->
+    <color name="grey">#c0bfbf</color> <!-- 灰色 -->
+    <color name="blue">#0000ff</color> <!-- 蓝色 -->
+    <color name="black">#2f2c2c</color> <!-- 黑色 -->
+    <color name="titlebar_color">#b38ed3</color>
+    <color name="loginback_color">#efeff4</color>
+    <color name="possible_result_points">#c0ffbd21</color> <!-- Android standard ICS color -->
+    <color name="result_view">#b0000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="viewfinder_laser">#ffcc0000</color> <!-- Android standard ICS color -->
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="light_color">#f6f4f4</color>
+    <color name="center_bg">#F4F4F4</color>
+    <color name="gray_deep">#5c5c5c</color>
+    <color name="common_bg">#FAFAFA</color>
+    <color name="theme_gray">#646464</color>
+    <color name="shadow">#AAEBEBEB</color>
+    <color name="divider">#E5E5E5</color>
+    <color name="alpha_gray">#CC646464</color>
+    <color name="aqua">#00ffff</color> <!-- 浅绿色 -->
+    <color name="aquamarine">#c0e3d6</color> <!-- 碧绿色 -->
+
+    <color name="bar">#e8e8e8</color>
+
+
+    <color name="navpage">#FFE1E8EB</color>
+
+    <color name="lightgreen">#045db6</color>
+    <color name="textcolor">#888888</color>
+
+    <!--选中文字的颜色 蓝色-->
+    <color name="tab_text_color_selected">#B38ED3</color>
+    <!--未选中文字的颜色 蓝色-->
+    <color name="tab_text_color_normal">#000000</color>
+</resources>

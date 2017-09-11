@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gainsboro"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/kc_head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/kc_time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/kc_time_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_down"
+                android:gravity="center"
+                android:maxEms="6"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:paddingRight="10dp"
+                android:text="时间"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:background="@color/gainsboro"/>
+
+        <LinearLayout
+            android:id="@+id/kc_type"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/kc_type_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_down"
+                android:gravity="center"
+                android:ems="6"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:paddingRight="10dp"
+                android:text="全部"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="20dp"
+            android:background="@color/gainsboro"/>
+
+        <LinearLayout
+            android:id="@+id/kc_addr"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/kc_addr_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_down"
+                android:gravity="center"
+                android:ems="6"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:paddingRight="10dp"
+                android:text="附近"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+
+
+        <com.chaotong.yujia.main.utils.PullToFlash.PullToRefreshLayout
+            android:id="@+id/refresh_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+           >
+
+            <include layout="@layout/refresh_head" />
+            <!-- 支持所有实现Pullable接口的View -->
+
+            <com.chaotong.yujia.main.utils.PullToFlash.PullableListView
+                android:id="@+id/record_listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/gainsboro"
+                android:dividerHeight="16dp"
+                android:paddingLeft="8dp"
+                android:scrollbars="none"
+                android:paddingTop="8dp"
+                android:paddingRight="8dp" />
+
+            <include layout="@layout/load_more" />
+
+        </com.chaotong.yujia.main.utils.PullToFlash.PullToRefreshLayout>
+
+
+        <ProgressBar
+            android:id="@+id/probar"
+            style="?android:attr/progressBarStyleSmallTitle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="50dp"
+            android:indeterminateDrawable="@drawable/progressbar"
+            android:visibility="invisible" />
+    </FrameLayout>
+</LinearLayout>

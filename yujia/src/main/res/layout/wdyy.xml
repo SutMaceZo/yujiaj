@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:background="@color/titlebar_color"
+    tools:context="com.chaotong.yujia.main.menu.benggong.wo_de_yu_yue.WdyyActivity">
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@color/titlebar_color"
+        android:layout_height="48dp">
+        <RelativeLayout
+            android:id="@+id/rl_yuyue_back"
+            android:layout_width="50dp"
+            android:layout_height="48dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/rt"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:id="@+id/yuyue_back"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="我的预约"
+            android:id="@+id/textView4"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:textColor="@android:color/white"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gainsboro"
+        android:layout_below="@+id/RelativeLayout1">
+
+    <com.chaotong.yujia.main.utils.PullToFlash.PullToRefreshLayout
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <include layout="@layout/refresh_head" />
+        <!-- 支持所有实现Pullable接口的View -->
+
+        <com.chaotong.yujia.main.utils.PullToFlash.PullableListView
+            android:id="@+id/record_listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/gainsboro"
+            android:paddingTop="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:dividerHeight="8dp" />
+
+        <include layout="@layout/load_more" />
+
+   </com.chaotong.yujia.main.utils.PullToFlash.PullToRefreshLayout>
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/probar"
+            android:visibility="invisible"
+            style="?android:attr/progressBarStyleSmallTitle"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="50dp"
+            android:indeterminateDrawable="@drawable/progressbar"
+            />
+    </FrameLayout>
+</RelativeLayout>

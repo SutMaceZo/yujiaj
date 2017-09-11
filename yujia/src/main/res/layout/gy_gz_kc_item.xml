@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginRight="5dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_weight="3.5">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/jiaolian_image"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            app:actualImageScaleType="fitCenter"
+            app:failureImageScaleType="fitCenter"
+            app:failureImage="@mipmap/default_error"
+            app:placeholderImage="@mipmap/default_error"
+            app:placeholderImageScaleType="fitCenter"
+           />
+
+        <TextView
+            android:id="@+id/pj_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/jiaolian_image"
+            android:layout_toRightOf="@+id/jiaolian_image"
+            android:text="教练名称"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/pj_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/pj_name"
+            android:layout_marginLeft="19dp"
+            android:layout_marginStart="19dp"
+            android:layout_toEndOf="@+id/pj_name"
+            android:layout_toRightOf="@+id/pj_name"
+            android:text="课程类型"
+            android:ellipsize="end"
+            android:ems="8"
+            android:singleLine="true"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/pj_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pj_name"
+            android:layout_alignStart="@+id/pj_name"
+            android:layout_centerVertical="true"
+            android:text="时间"
+            android:textColor="@color/gray"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/pj_changguan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/jiaolian_image"
+            android:layout_alignLeft="@+id/pj_time"
+            android:layout_alignStart="@+id/pj_time"
+            android:ellipsize="end"
+            android:ems="8"
+            android:singleLine="true"
+            android:text="场馆名称"
+            android:textColor="@color/gray"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/zxing"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/text_bg"
+            android:text="签到码"
+            android:clickable="false"
+            android:textColor="@color/titlebar_color"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp">
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/ct_max"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="最大人数："
+                android:layout_gravity="center_vertical"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/ct_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="最小人数："
+                android:layout_gravity="center_vertical"
+                android:textSize="14sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/ct_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="到课人数："
+                android:layout_gravity="center_vertical"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

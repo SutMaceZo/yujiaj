@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gainsboro"
+       >
+        <com.chaotong.yujia.main.utils.PullToFlash.PullToRefreshLayout
+            android:id="@+id/refresh_view"
+            android:layout_width="match_parent"
+            android:layout_marginTop="1dp"
+            android:layout_height="wrap_content" >
+
+            <include layout="@layout/refresh_head" />
+            <!-- 支持所有实现Pullable接口的View -->
+
+            <com.chaotong.yujia.main.utils.PullToFlash.PullableListView
+                android:id="@+id/record_listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:divider="@color/gainsboro"
+                android:dividerHeight="24dp"
+                android:paddingTop="8dp"
+                android:scrollbars="none"
+                 />
+
+            <include layout="@layout/load_more" />
+
+    </com.chaotong.yujia.main.utils.PullToFlash.PullToRefreshLayout>
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/probar"
+            android:visibility="invisible"
+            style="?android:attr/progressBarStyleSmallTitle"
+            android:layout_gravity="bottom|center"
+
+            android:layout_marginBottom="50dp"
+            android:indeterminateDrawable="@drawable/progressbar"
+            />
+    </FrameLayout>
+</LinearLayout>

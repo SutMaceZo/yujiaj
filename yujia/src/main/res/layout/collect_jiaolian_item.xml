@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:background="@color/white">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/trainer_image"
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        android:layout_centerVertical="true"
+        app:actualImageScaleType="centerCrop"
+        app:failureImage="@mipmap/default_error"
+        app:failureImageScaleType="centerCrop"
+        app:placeholderImage="@mipmap/default_error"
+        app:placeholderImageScaleType="centerCrop" />
+
+    <LinearLayout
+        android:id="@+id/yjj_lin1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/trainer_image"
+        android:layout_toRightOf="@+id/trainer_image"
+        android:layout_marginLeft="32dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/trainer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxEms="8"
+            android:singleLine="true"
+            android:text="教练名称"
+            android:textSize="16sp" />
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/sex"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@mipmap/female"
+            android:layout_marginLeft="8dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/yjj_lin2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/trainer_image"
+        android:layout_marginLeft="32dp"
+        android:layout_below="@+id/yjj_lin1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+        <RatingBar
+            android:id="@+id/rating_bar"
+            style="@style/RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:stepSize="0.5" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/trainer_grade"
+            android:layout_marginLeft="4dp"
+            android:textSize="14sp"
+            android:text="1.0"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:layout_toRightOf="@+id/trainer_image"
+        android:layout_marginLeft="32dp"
+        android:layout_below="@+id/yjj_lin2"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/trainer_classtype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:gravity="left"
+            android:text="课程类型"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

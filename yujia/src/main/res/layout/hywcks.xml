@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="104dp"
+    android:background="@drawable/text_bg3"
+    android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:padding="4dp"
+        android:layout_gravity="center_vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:background="@mipmap/yybg">
+            <TextView
+                android:layout_marginTop="24dp"
+                android:id="@+id/yytext1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sadada"
+                android:textSize="12sp"
+                />
+            <TextView
+                android:id="@+id/yytext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="星期一"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/red"
+                />
+        </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/line"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2.5"
+        android:paddingLeft="8dp"
+        android:paddingTop="16dp"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="热瑜伽"
+                android:id="@+id/yytext3"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/yytext4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="气球"
+                android:includeFontPadding="true"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:maxEms="5"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:layout_marginLeft="4dp"
+                android:layout_alignBottom="@+id/yytext3"
+                android:layout_toRightOf="@+id/yytext3"
+                />
+            <TextView
+                android:id="@+id/yytext5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09:00-10:00"
+                android:layout_alignParentBottom="true"
+                android:textSize="14sp"
+                android:textColor="@color/gray"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="4dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dp"
+                >
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/link"
+                    />
+                <TextView
+                    android:id="@+id/yytext6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="dsada"
+                    android:maxEms="5"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_marginLeft="4dp"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+           />
+
+    </RelativeLayout>
+
+</LinearLayout>

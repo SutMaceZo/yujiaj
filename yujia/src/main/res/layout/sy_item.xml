@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="108dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+           >
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:padding="8dp"
+                android:id="@+id/sy_image1"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                app:actualImageScaleType="centerCrop"
+                app:roundAsCircle="true"
+                app:failureImage="@mipmap/default_error"
+                app:failureImageScaleType="centerCrop"
+                app:placeholderImage="@mipmap/default_error"
+                app:placeholderImageScaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/sy_text9"
+                android:layout_width="80dp"
+                android:layout_height="36dp"
+                android:gravity="center"
+                android:text="私教"
+                android:textColor="@color/aquamarine"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    >
+
+                    <TextView
+                        android:id="@+id/sy_text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="热瑜伽"
+                        android:gravity="bottom"
+                        android:includeFontPadding="false"
+                        android:layout_centerVertical="true"
+                        android:textSize="16sp"
+                        android:maxEms="4"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+
+                        />
+                    <TextView
+                        android:id="@+id/sy_text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="10:00-11:00"
+                        android:textColor="@color/gray"
+                        android:textSize="10sp"
+                        android:paddingBottom="0.5dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_alignBottom="@+id/sy_text1"
+                        android:layout_toRightOf="@+id/sy_text1"
+                        android:layout_toEndOf="@+id/sy_text1" />
+                    <TextView
+                        android:id="@+id/sy_text3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="包场金额￥："
+                        android:textSize="13sp"
+                        android:layout_alignBottom="@+id/sy_text1"
+                        android:layout_toRightOf="@+id/sy_text2"
+                        android:layout_marginLeft="4dp"/>
+                    <TextView
+                        android:id="@+id/sy_text4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="sda"
+                        android:textSize="10sp"
+                        android:paddingTop="0.5dp"
+                        android:textColor="@color/gray"
+                        android:layout_alignBottom="@+id/sy_text3"
+                        android:layout_toRightOf="@+id/sy_text3"
+                       />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/sy_text8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="yujiaguan"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/aquamarine"
+                    android:textSize="16sp"/>
+
+                <Button
+                    android:id="@+id/sy_bt1"
+                    android:layout_width="100dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/text_bg2"
+                    android:layout_height="28dp"
+                    android:focusable="false"
+                    android:text=""
+                    android:textSize="14sp"
+                    android:textColor="@color/white"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/sy_lin1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/sy_text5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="已约人数："
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/sy_text6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="最多人数："/>
+                <TextView
+                    android:id="@+id/sy_text7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="最少人数："
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

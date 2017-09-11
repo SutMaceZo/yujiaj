@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:background="@color/titlebar_color"
+    tools:context="com.chaotong.yujia.main.menu.yujiajia.yhj.view.YhjActivity">
+
+    <RelativeLayout
+        android:id="@+id/yhj_rela"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/titlebar_color"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_bt_back_yhj"
+            android:layout_width="50dp"
+            android:layout_height="48dp">
+            <ImageView
+                android:id="@+id/bt_back_yhj"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/rt"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"/>
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="优惠券"
+            android:textSize="18sp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/yhj_rela"
+        >
+
+    <com.chaotong.yujia.main.utils.PullToFlash.PullToRefreshLayout
+
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gainsboro"
+        >
+        <include layout="@layout/refresh_head"
+            />
+        <com.chaotong.yujia.main.utils.PullToFlash.PullableListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/record_listView"
+            android:layout_below="@+id/RelativeLayout1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:divider="@color/gainsboro"
+            android:dividerHeight="8dp"
+            android:paddingTop="8dp"
+            android:scrollbars="none"
+            />
+
+        <include layout="@layout/load_more"
+            />
+    </com.chaotong.yujia.main.utils.PullToFlash.PullToRefreshLayout>
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            style="?android:attr/progressBarStyleSmall"
+            android:indeterminateDrawable="@drawable/progressbar"
+            android:layout_gravity="center"
+            android:layout_marginBottom="50dp"
+            android:visibility="invisible"
+            android:id="@+id/progress"
+            />
+    </FrameLayout>
+</RelativeLayout>

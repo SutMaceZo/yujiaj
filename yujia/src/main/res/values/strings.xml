@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">瑜伽伽</string>
+
+
+    <drawable name="clr_normal">@color/aquamarine</drawable>
+    <drawable name="clr_pressed">@color/aquamarine</drawable>
+
+
+    <string name="msg_camera_framework_bug">Sorry, the Android camera encountered a problem. You may need to restart the device.</string>
+    <string name="button_ok">OK</string>
+    <string name="viewfinderview_status_text1">将二维码/条码放入取景框内</string>
+    <string name="viewfinderview_status_text2">即可自动扫描</string>
+
+
+    <string name="tab_menu_yjj">瑜伽伽</string>
+    <string name="tab_menu_xl">约课</string>
+    <string name="tab_menu_yjl">约教练</string>
+    <string name="tab_menu_bg">本宫</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="pull_to_refresh">下拉刷新</string>
+    <string name="release_to_refresh">释放立即刷新</string>
+    <string name="refreshing">正在刷新...</string>
+    <string name="refresh_succeed">刷新成功</string>
+    <string name="refresh_fail">刷新失败</string>
+    <string name="pullup_to_load">上拉加载更多</string>
+    <string name="release_to_load">释放立即加载</string>
+    <string name="loading">正在加载...</string>
+    <string name="load_succeed">加载成功</string>
+    <string name="load_fail">加载失败</string>
+
+
+    <string name="select_city">选择城市</string>
+    <string name="hot_city">热门城市</string>
+    <string name="located_city">定位城市</string>
+    <string name="hint_search_box">请输入城市名或拼音</string>
+    <string name="nothing_found">没有搜索结果~</string>
+    <string name="locating">正在定位…</string>
+    <string name="located_failed">定位失败</string>
+
+    <string name="error">数据获取失败</string>
+
+    <string name="pay_result_tip">这个界面用于显示第三方app通过微信支付的结果</string>
+    <string name="message">您的账号已在另一台设备登录，请重新登录</string>
+    <string name="pay">确定要支付？</string>
+
+    <string name="qxyy">您确定要取消预约吗？</string>
+    <string name="title_activity_banner_url_">Banner_url_Activity</string>
+</resources>

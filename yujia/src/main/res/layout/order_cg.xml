@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="@color/center_bg"
+        app:cardElevation="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+                <TextView
+                    android:id="@+id/swim_cg_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:text="卡卡的卡拉卡开慢点"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/swim_cg_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/swim_cg_name"
+                    android:layout_marginLeft="4dp"
+                    android:layout_toRightOf="@+id/swim_cg_name"
+                    android:ellipsize="end"
+                    android:maxEms="18"
+                    android:singleLine="true"
+                    android:text="卡卡的卡拉卡开慢点"
+                    android:textColor="@color/gray"
+                    android:textSize="10sp"
+
+                    />
+                <TextView
+                    android:id="@+id/distence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="dsad"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/gray"
+                    android:layout_marginRight="16dp"
+                    android:layout_alignBottom="@+id/swim_cg_name"
+                    android:textSize="10sp"/>
+             </RelativeLayout>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/swim_cg_image"
+                android:layout_width="match_parent"
+                android:layout_height="176dp"
+                app:actualImageScaleType="centerCrop"
+                app:placeholderImage="@drawable/not_find"
+                app:placeholderImageScaleType="centerCrop"
+                app:failureImage="@drawable/not_find"
+                app:failureImageScaleType="centerCrop"
+                app:viewAspectRatio="2.56" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+
+
+
+
+

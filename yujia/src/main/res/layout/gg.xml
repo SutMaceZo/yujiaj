@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <com.chaotong.yujia.main.menu.login.regeist.wheels.WheelView
+            android:id="@+id/id_province"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"/>
+
+        <com.chaotong.yujia.main.menu.login.regeist.wheels.WheelView
+            android:id="@+id/id_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></com.chaotong.yujia.main.menu.login.regeist.wheels.WheelView>
+
+        <com.chaotong.yujia.main.menu.login.regeist.wheels.WheelView
+            android:id="@+id/id_district"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></com.chaotong.yujia.main.menu.login.regeist.wheels.WheelView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dip"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/text_bg"
+        android:text="确定"
+
+        android:textSize="20sp" />
+
+</LinearLayout>

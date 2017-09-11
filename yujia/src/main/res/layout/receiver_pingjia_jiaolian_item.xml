@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/pic"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:placeholderImage="@mipmap/default_error"
+        app:placeholderImageScaleType="fitCenter"
+        android:layout_centerVertical="true"
+        app:failureImageScaleType="fitCenter"
+        app:failureImage="@mipmap/default_error"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="谁评价"
+        android:textSize="18sp"
+        android:id="@+id/name"
+        android:layout_marginTop="10dp"
+        android:layout_alignTop="@+id/pic"
+        android:layout_toRightOf="@+id/pic"
+        android:layout_toEndOf="@+id/pic" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="什么课"
+        android:textSize="14sp"
+        android:textColor="@color/gray"
+        android:id="@+id/classes"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/pic"
+        android:layout_toEndOf="@+id/pic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="时间"
+        android:id="@+id/time"
+        android:layout_marginRight="30dp"
+        android:layout_alignBottom="@+id/classes"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

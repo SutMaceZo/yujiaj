@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.chaotong.yujia.main">
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="23" />
+    <!-- Required -->
+    <permission
+        android:name="com.chaotong.yujia.main.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <!--友盟统计需要的权限-->
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="com.chaotong.yujia.main.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <!-- 在sdcard中创建/删除文件的权限 -->
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <!-- 不是SDK需要的权限，是示例中的后台唤醒定位需要的权限 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 读取缓存数据 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 更改设置 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/yujiajia"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="cn.jpush.android.ui.PopWinActivity"
+            android:exported="false"
+            android:theme="@style/MyDialogStyle" />
+
+        <!-- Required SDK核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.chaotong.yujia.main" />
+            </intent-filter>
+        </activity>
+
+        <!-- Required SDK 核心功能 -->
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:process=":mult">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+
+        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+
+                <category android:name="com.chaotong.yujia.main" />
+            </intent-filter>
+        </service>
+
+        <!-- Required -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+
+                <category android:name="com.chaotong.yujia.main" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK核心功能 -->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false" />
+        <!-- Required SDK核心功能 -->
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
+
+        <!-- User defined. 用户自定义的广播接收器 -->
+        <receiver
+            android:name=".MyJPushReceiver"
+            android:enabled="true">
+            <intent-filter>
+
+                <!-- Required 用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!-- Required 用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!-- Required 用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!-- Required 用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- Optional 用户接受Rich Push Javascript 回调函数的intent -->
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+
+                <category android:name="com.chaotong.yujia.main" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <!-- Required. AppKey copied from Portal -->
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="c98f3e8f339b3396e599fbd1" />
+
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBarN"
+            android:windowSoftInputMode="adjustPan|stateUnspecified">
+
+            <!--
+              <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
+                  <category android:name="android.intent.category.LAUNCHER" />
+              </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".menu.yujiajia.points.MyPointsActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.yujiajia.integralInfo.IntegralInfoActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.yujiajia.ckgd.FindMoreActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        />
+        <activity
+            android:name=".menu.yujiajia.yhj.view.YhjActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        />
+        <activity
+            android:name=".menu.yujiajia.record.RecordActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.yujiajia.qddd.SyddActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.yujiajia.jfgz.JfgzActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.Zxing.sign.ZXingActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.Zxing.an.DecodeDetail"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.yujiajia.qddd.QdddActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.yujiajia.cgxq.CgxqActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.wo_de_yu_yue.WdyyActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.wan_cheng_ke_shi.WcksActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.dai_ping_jia.DpjActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.yujiajia.jlxq.JlxqActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.wo_de_you_hui_juan.WdyhjActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.wo_de_shou_chang.WdscActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.yi_jian_fan_kui.fankuiActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.she_zi.SzActivity"
+            android:theme="@style/AppTheme.NoActionBarN"></activity>
+        <activity
+            android:name=".menu.login.regeist.huiyuanRegist"
+            android:theme="@style/AppTheme.NoActionBarN"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".menu.login.forgetPasswordActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.login.loginActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.login.regeist.registActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.login.regeist.testPhoneActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.login.regeist.jiaolianRegist"
+            android:theme="@style/AppTheme.NoActionBarN"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".menu.login.regeist.guanzhuRegist"
+            android:theme="@style/AppTheme.NoActionBarN"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+
+            <!--
+                 <intent-filter>
+                      <action android:name="android.intent.action.MAIN" />
+                      <category android:name="android.intent.category.LAUNCHER" />
+                  </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".menu.login.regeist.guanyuanRegist"
+            android:theme="@style/AppTheme.NoActionBarN"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".menu.login.regeist.changguan_info"
+            android:theme="@style/AppTheme.NoActionBarN"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+
+            <!--
+                  <intent-filter>
+                                          <action android:name="android.intent.action.MAIN" />
+                                          <category android:name="android.intent.category.LAUNCHER" />
+                                      </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".menu.benggong.dai_ping_jia.PingjiaActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.wo_de_ke_cheng.WdkcActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.she_zi.updatePassword"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.she_zi.Edit_info"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.dai_ping_jia.ReceiverPingJia"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.login.regeist.adressJiaolian"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.yujiajia.kcxq.KcDetailActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.dai_ping_jia.receiverPJ"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.wo_de_yu_yue.YuYueActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.Zxing.an.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.Zxing.an.PreferencesActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.xiaoxi.XiaoXiActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.xiaoxi.MessageActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.wo_de_yu_yue.GuanzhuYyActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.wo_de_yu_yue.GzHelpHyActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.gy_gz_kc.GyGzKcActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.gy_gz_kc.QrcodeActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.yujiajia.Location.CityPickerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBarN"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".menu.yujiaolian.main.view.SyxqActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.xiulian.main.JlPjActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.xiulian.main.CgPjActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".menu.yujiajia.ckgd.FindMoreCgActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.xiulian.main.SearchActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.suo_shu_chang_guan.SscgActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.suo_shu_chang_guan.TKActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.benggong.suo_shu_chang_guan.SsAddActivity"
+            android:theme="@style/AppTheme.NoActionBarN"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".menu.benggong.suo_shu_chang_guan.SsAdd1Activity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".menu.login.regeist.CgSearchActivity"
+            android:theme="@style/AppTheme.NoActionBarN"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".menu.benggong.she_zi.SvnInfo"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name="com.foamtrace.photopicker.PhotoPickerActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/PhotoPickerTheme" />
+        <activity
+            android:name="com.foamtrace.photopicker.PhotoPreviewActivity"
+            android:theme="@style/PhotoPickerTheme" />
+        <activity
+            android:name=".menu.benggong.wan_cheng_ke_shi.HyWcksActivity"
+            android:theme="@style/AppTheme.NoActionBarN" />
+        <activity
+            android:name=".LaunchActivity"
+            android:theme="@style/WelcomeTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".AppRegister">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <service android:name="com.amap.api.location.APSService" />
+        <!--高德地图-->
+        <!--测试KEY:cbd598d9445da85fef7b8e0a403b6036-->
+        <!--正式KEY:661b35d3b80047eb6924b514bfd0f805-->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="661b35d3b80047eb6924b514bfd0f805" />
+
+        <activity
+            android:name=".menu.yujiajia.main.Banner_url_Activity"
+            android:theme="@style/AppTheme.NoActionBarN"></activity>
+
+        <!--友盟统计-->
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="59391a79ae1bf868240002d1" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL}" />
+    </application>
+
+</manifest>

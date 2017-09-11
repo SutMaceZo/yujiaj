@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:background="@color/titlebar_color"
+    android:orientation="vertical">
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+        android:background="@color/titlebar_color">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="兑换记录"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+        <RelativeLayout
+            android:id="@+id/rl_bt_back"
+            android:layout_width="50dp"
+            android:layout_height="48dp">
+            <ImageView
+                android:id="@+id/bt_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/rt"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+<com.chaotong.yujia.main.utils.PullToFlash.PullToRefreshLayout
+
+    android:id="@+id/refresh_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+    <include layout="@layout/refresh_head"
+       />
+    <com.chaotong.yujia.main.utils.PullToFlash.PullableListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/record_listView"
+        android:layout_below="@+id/RelativeLayout1"
+        android:paddingTop="10dp"
+        android:scrollbars="none"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <include layout="@layout/load_more"
+        />
+    </com.chaotong.yujia.main.utils.PullToFlash.PullToRefreshLayout>
+</LinearLayout>

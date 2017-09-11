@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemlayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/coach_item_bg"
+    android:orientation="vertical"
+    android:paddingBottom="4dp"
+    android:paddingTop="4dp">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/ItemImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        app:actualImageScaleType="centerCrop"
+        app:failureImage="@mipmap/default_error"
+        app:failureImageScaleType="centerCrop"
+         />
+    <!--app:placeholderImage="@mipmap/default_error"
+    app:placeholderImageScaleType="centerCrop"-->
+    <TextView
+        android:id="@+id/tvList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxEms="4"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="Title"
+        android:textSize="16sp"
+        android:layout_marginTop="4dp"
+        android:paddingLeft="8dp"
+       ></TextView>
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        style="@style/RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/swim_js_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:layout_marginLeft="8dp"
+        android:stepSize="0.1" />
+
+    <TextView
+        android:id="@+id/tvCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxEms="5"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="Info"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="#a7e8d0"></TextView>
+
+</LinearLayout>
